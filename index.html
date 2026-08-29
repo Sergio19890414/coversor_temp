@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conversor moderno de temperaturas entre Celsius, Fahrenheit y Kelvin.">
+  <title>Conversor de Temperaturas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="background-glow glow-blue"></div>
+  <div class="background-glow glow-orange"></div>
+
+  <main class="page">
+    <section class="app-card">
+      <header class="hero">
+        <div class="logo">
+          <span class="thermometer">🌡</span>
+        </div>
+        <div>
+          <p class="eyebrow">HERRAMIENTA DE CONVERSIÓN</p>
+          <h1>Conversor de <span>Temperaturas</span></h1>
+          <p class="subtitle">Convierte rápidamente entre Celsius, Fahrenheit y Kelvin.</p>
+        </div>
+      </header>
+
+      <div class="temperature-scale" aria-label="Indicador de temperatura">
+        <div class="scale-label cold-label">❄ Frío</div>
+        <div class="scale">
+          <div class="scale-marker" id="scaleMarker"></div>
+        </div>
+        <div class="scale-label hot-label">Caliente 🔥</div>
+      </div>
+
+      <form id="converterForm" novalidate>
+        <div class="field">
+          <label for="temperature">Valor de temperatura</label>
+          <div class="number-box">
+            <span class="number-symbol">°</span>
+            <input id="temperature" type="number" step="any" inputmode="decimal" placeholder="Escribe un valor..." autocomplete="off">
+          </div>
+          <small id="inputHint">Puedes utilizar valores decimales.</small>
+        </div>
+
+        <div class="conversion-row">
+          <div class="field">
+            <label for="fromUnit">Unidad de origen</label>
+            <div class="select-box">
+              <select id="fromUnit">
+                <option value="C">Celsius (°C)</option>
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="swap-btn" id="swapBtn" type="button" title="Intercambiar unidades" aria-label="Intercambiar unidades">
+            ⇄
+          </button>
+
+          <div class="field">
+            <label for="toUnit">Unidad de destino</label>
+            <div class="select-box">
+              <select id="toUnit">
+                <option value="F">Fahrenheit (°F)</option>
+                <option value="C">Celsius (°C)</option>
+                <option value="K">Kelvin (K)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="error" class="error" role="alert" aria-live="polite"></div>
+
+        <div class="buttons">
+          <button class="convert-btn" type="submit">
+            <span>Convertir temperatura</span>
+            <strong>→</strong>
+          </button>
+          <button class="clear-btn" id="clearBtn" type="button">Limpiar</button>
+        </div>
+      </form>
+
+      <section class="result" id="resultCard" aria-live="polite">
+        <div class="result-top">
+          <span>RESULTADO</span>
+          <span id="resultEmoji">🌡️</span>
+        </div>
+        <div class="result-main">
+          <strong id="resultValue">—</strong>
+          <span id="resultUnit">°F</span>
+        </div>
+        <p id="resultText">Ingresa una temperatura y pulsa “Convertir temperatura”.</p>
+      </section>
+
+      <section class="formulas">
+        <div class="section-title">
+          <span>Fórmulas disponibles</span>
+          <span class="badge">6 CONVERSIONES</span>
+        </div>
+
+        <div class="formula-grid">
+          <article><b>°C → °F</b><span>°F = (°C × 9/5) + 32</span></article>
+          <article><b>°F → °C</b><span>°C = (°F − 32) × 5/9</span></article>
+          <article><b>°C → K</b><span>K = °C + 273.15</span></article>
+          <article><b>K → °C</b><span>°C = K − 273.15</span></article>
+          <article><b>°F → K</b><span>K = (°F − 32) × 5/9 + 273.15</span></article>
+          <article><b>K → °F</b><span>°F = (K − 273.15) × 9/5 + 32</span></article>
+        </div>
+      </section>
+
+      <footer>
+        <span>Conversor de Temperaturas</span>
+        <span>•</span>
+        <span>HTML5 · CSS3 · JavaScript Vanilla</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
